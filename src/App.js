@@ -6,7 +6,7 @@ import ToDonesContainer from "./components/ToDonesContainer";
 import { v4 as uuid } from "uuid";
 import About from "./components/About";
 import NotFound from "./components/NotFound";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
   state = {
@@ -49,7 +49,7 @@ class App extends React.Component {
     let todones = this.state.todoList.filter((item) => item.done === true); // []
 
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="app">
           <Navigation />
 
@@ -72,7 +72,7 @@ class App extends React.Component {
             <Route component={NotFound} />
           </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
